@@ -2,11 +2,11 @@
 
 > A production-grade full-stack ecommerce web app — upgraded from v1 (React + JS) to a fully typed, authenticated, and optimized v2.
 
-![Home Page](./screenshots/home.png)
+![Home Page](./screenshot/home.png)
 
 ## 🔗 Links
 
-- **Live Demo:** [thread-nova-v2.vercel.app](https://your-vercel-link.vercel.app)
+- **Live Demo:** [thread-nova-v2.vercel.app](https://thread-nova-v2.vercel.app)
 - **v1 (original):** [ThreadNova-Ecommerce](https://github.com/SumantKrSingh/ThreadNova-Ecommerce)
 
 ---
