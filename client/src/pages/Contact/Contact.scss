@@ -15,7 +15,7 @@
   }
 
   .contact-strip {
-    padding: 0.5rem 2rem;
+    padding: 0.7rem 2rem;
     border: 1px solid var(--purple);
     width: fit-content;
     border-radius: 1rem;
@@ -25,11 +25,12 @@
     color: var(--purple);
     letter-spacing: 0.2rem;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .contact-title {
     font-size: 4rem;
+    font-weight: 400;
 
     @include tablet {
       font-size: 2.5rem;
@@ -41,7 +42,7 @@
   }
 
   .contact-desc {
-    color: var(--grey);
+    color: var(--textLite);
     line-height: 1.7;
     max-width: 50rem;
   }
@@ -51,8 +52,8 @@
   width: 100%;
   display: flex;
   align-items: stretch;
-  border-top: 1px solid var(--grey);
-  border-bottom: 1px solid var(--grey);
+  border-top: 1px solid var(--muted);
+  border-bottom: 1px solid var(--muted);
 
   @include tablet {
     flex-direction: column;
@@ -65,11 +66,11 @@
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    border-right: 1px solid var(--grey);
+    border-right: 1px solid var(--muted);
 
     @include tablet {
       border-right: none;
-      border-bottom: 1px solid var(--grey);
+      border-bottom: 1px solid var(--muted);
       padding: 3rem 1.5rem;
     }
 
@@ -106,7 +107,7 @@
 
     .note {
       font-size: 0.85rem;
-      color: var(--grey);
+      color: var(--textLite);
       letter-spacing: 0.5px;
       max-width: 36rem;
       text-align: center;
@@ -136,7 +137,7 @@
       width: 100%;
       max-width: 36rem;
       padding: 1.25rem 1.5rem;
-      border: 1px solid var(--grey);
+      border: 1px solid var(--muted);
       border-radius: 1rem;
 
       .info-label {
@@ -152,7 +153,7 @@
       }
 
       .info-sub {
-        color: var(--grey);
+        color: var(--muted);
         font-size: 0.9rem;
       }
     }
@@ -170,7 +171,7 @@
 
         .social-icon {
           padding: 0.75rem;
-          border: 1px solid var(--grey);
+          border: 1px solid var(--muted);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -217,7 +218,7 @@
     }
 
     .faq-card {
-      border: 1px solid var(--grey);
+      border: 1px solid var(--muted);
       padding: 1.5rem;
       border-radius: 1rem;
       width: 100%;
@@ -228,7 +229,7 @@
       }
 
       .faq-answ {
-        color: var(--grey);
+        color: var(--textLite);
         line-height: 1.7;
         font-size: 0.95rem;
       }

@@ -9,6 +9,11 @@ import { getImageUrl } from '../../utils/getImage'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { addToCart } from '../../redux/cart/cartSlice'
 import type { ProductData, ProductImage } from '../../types/product.types'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import { useAppSelector } from '../../hooks/useAppSelector'
+import { addToWishlist, removeFromWishlist } from '../../redux/wishlist/wishlistSlice'
+import { useNavigate } from 'react-router-dom'
+import { SkeletonCard } from '../../components'
 
 function Product() {
   const { id } = useParams<{ id: string }>()
@@ -19,10 +24,41 @@ function Product() {
   const { data, loading, error } = useFetch<ProductData[]>(
     `/products?filters[id][$eq]=${id}&populate=*`
   )
-
   const product = Array.isArray(data) && data.length > 0 ? data[0] : null
 
-  if (loading) return <div>Loading...</div>
+  const user = useAppSelector((state) => state.auth.user)
+  const wishlistItems = useAppSelector((state) => state.wishlist.items)
+  const isWishlisted = wishlistItems.some((w) => w.id === product?.id)
+  const navigate = useNavigate()
+
+  const handleWishlist = () => {
+    if (!user) {
+      navigate('/login')
+      return
+    }
+    if (isWishlisted) {
+      dispatch(removeFromWishlist(product.id as number))
+    } else {
+      dispatch(
+        addToWishlist({
+          id: product.id as number,
+          title: product.title,
+          price: product.price,
+          img: getImageUrl(product.img?.url),
+        })
+      )
+    }
+  }
+  if (loading)
+    return (
+      <div className="product">
+        <div className="left">
+          {[1, 2, 3].map((i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      </div>
+    )
   if (error) return <div>Error loading product</div>
   if (!product) return <div>Product not found</div>
 
@@ -87,9 +123,13 @@ function Product() {
         </button>
 
         <div className="links">
-          <div className="items">
-            <FavoriteBorderIcon fontSize="large" />
-            Add To Wishlist
+          <div className="items" onClick={handleWishlist} style={{ cursor: 'pointer' }}>
+            {isWishlisted ? (
+              <FavoriteIcon fontSize="large" style={{ color: 'red' }} />
+            ) : (
+              <FavoriteBorderIcon fontSize="large" />
+            )}
+            {isWishlisted ? 'Remove from Wishlist' : 'Add To Wishlist'}
           </div>
           <div className="items">
             <CompareSharpIcon fontSize="large" />

@@ -1,6 +1,7 @@
 import Card from '../Card/Card'
 import useFetch from '../../hooks/useFetch'
 import './FeatureProducts.scss'
+import SkeletonCard from '../SkeletonLoaders/SkeletonCard'
 
 // ✅ Props type
 interface FeatureProductProps {
@@ -18,7 +19,17 @@ function FeatureProduct({ type }: FeatureProductProps) {
       </div>
       <div className="bottom">
         {error && <p>Something Went Wrong !</p>}
-        {loading ? 'loading' : data?.map((item) => <Card item={item} key={item.id} />)}
+        {loading ? (
+          <div className="featureProducts">
+            <div className="bottom">
+              {[1, 2, 3].map((i) => (
+                <SkeletonCard key={i} />
+              ))}
+            </div>
+          </div>
+        ) : (
+          data?.map((item) => <Card item={item} key={item.id} />)
+        )}
       </div>
     </div>
   )

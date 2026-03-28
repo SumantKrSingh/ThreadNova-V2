@@ -28,6 +28,10 @@
       .mainImg {
         z-index: 2;
       }
+
+      .images {
+        position: relative;
+      }
     }
 
     img {
@@ -44,7 +48,7 @@
 
     span {
       position: absolute;
-      color: teal;
+      color: var(--info);
       background-color: var(--bg);
       top: 0.5rem;
       left: 0.5rem;

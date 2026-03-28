@@ -31,7 +31,16 @@ function Slider() {
     <div className="slider">
       <div className="container" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {data.map((img, index) => (
-          <img key={index} src={img} alt={`slider-${index}`} />
+          <img
+            key={index}
+            src={img}
+            alt={`slider-${index}`}
+            width={1311}
+            height={874}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchPriority={index === 0 ? 'high' : 'auto'}
+            decoding="async"
+          />
         ))}
       </div>
       <div className="icons">

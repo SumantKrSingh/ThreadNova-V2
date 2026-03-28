@@ -5,8 +5,8 @@
   z-index: 999;
   background-color: var(--bg);
   padding: 2rem;
-  -webkit-box-shadow: 0px 0px 7px -5px rgba(0, 0, 0, 0.768);
-  box-shadow: 0px 0px 7px -5px rgba(0, 0, 0, 0.768);
+  -webkit-box-shadow: 0px 0px 7px -5px var(--cart-box-shadow);
+  box-shadow: 0px 0px 7px -5px var(--cart-box-shadow);
   max-width: 45rem;
   max-height: 80vh;
   display: flex;
@@ -31,14 +31,14 @@
       width: 0.6rem;
     }
     &::-webkit-scrollbar-track {
-      background: #f1f1f1;
+      background: var(--neutral);
     }
     &::-webkit-scrollbar-thumb {
-      background: #888;
+      background: var(--muted);
       border-radius: 1rem;
     }
     &::-webkit-scrollbar-thumb:hover {
-      background: #555;
+      background: var(--muted);
     }
   }
 
@@ -89,7 +89,7 @@
       top: 0;
       right: 0;
       font-size: 2.5rem;
-      color: red;
+      color: var(--danger);
       cursor: pointer;
       transition: transform 0.2s;
 
@@ -101,7 +101,7 @@
 
   .cartFooter {
     flex-shrink: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--neutral);
     padding-top: 1.5rem;
   }
 
@@ -116,7 +116,7 @@
   button {
     width: 100%;
     padding: 1.2rem;
-    background-color: #1b58db;
+    background-color: var(--accent);
     color: var(--text);
     cursor: pointer;
     border: none;
@@ -125,14 +125,14 @@
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #0f3d9e;
+      background-color: var(--primary);
     }
   }
 
   .reset {
     display: block;
     text-align: center;
-    color: red;
+    color: var(--danger);
     font-size: 1.4rem;
     cursor: pointer;
 

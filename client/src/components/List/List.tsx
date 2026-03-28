@@ -2,11 +2,11 @@ import './List.scss'
 import Card from '../Card/Card'
 import useFetch from '../../hooks/useFetch'
 import type { CardItem } from '../../types/product.types'
+import SkeletonCard from '../SkeletonLoaders/SkeletonCard'
 
-// ✅ Props type
 interface ListProps {
   catId: number
-  subCat: number[]
+  subCat: string[]
   maxPrice: number
   sort: string
   gender: string
@@ -47,7 +47,11 @@ function List({ subCat, maxPrice, sort, gender }: ListProps) {
   return (
     <div className="list">
       {loading ? (
-        'Loading...'
+        <div className="list">
+          {[1, 2, 3].map((i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
       ) : data && data.length > 0 ? (
         data.map((item) => <Card item={item} key={item.id} />)
       ) : (

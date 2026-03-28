@@ -11,7 +11,24 @@
   --nav-bg: #fdfff5b7;
   --toggle: #000;
   --purple: #940cee;
-  --grey: #808080c0;
+  --muted: #808080d8;
+  --danger: #ff0000;
+  --overlay: #000000c8;
+  --mb-box-shadow: #0000001a;
+  --info: #008080;
+  --cart-box-shadow: #000000c4;
+  --neutral: #111010d0;
+  --surface: #fff;
+  --base: #000;
+  --accent: #0a7fde;
+  --primary: #0c64df;
+  --secondary: #0d50a9;
+  --highlight: #d33564;
+  --warning: #ff4400d6;
+  --veil: #ffffff33;
+  --glass: #ffffff66;
+  --soft: #f5deb3;
+  --tint: #d335645e;
 }
 
 .dark {
@@ -20,6 +37,8 @@
   --text: #fffdf6;
   --textLite: #5b5e59;
   --toggle: #fff;
+  --neutral: #f1f1f1;
+  --glass: #ffffff05;
 }
 
 html {

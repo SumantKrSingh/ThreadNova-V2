@@ -5,10 +5,13 @@ import { useAppSelector } from '../../hooks/useAppSelector'
 import { removeItem, resetCart } from '../../redux/cart/cartSlice'
 import { stripeInstance } from '../../api/stripeInstance'
 import { getImageUrl } from '../../utils/getImage'
+import { useNavigate } from 'react-router-dom'
 
 function Cart() {
   const dispatch = useAppDispatch()
   const products = useAppSelector((state) => state.cart.products)
+  const user = useAppSelector((state) => state.auth.user)
+  const navigate = useNavigate()
 
   const totalPrice = (): string => {
     let total = 0
@@ -17,6 +20,10 @@ function Cart() {
   }
 
   async function handlePayment(): Promise<void> {
+    if (!user) {
+      navigate('/login')
+      return
+    }
     try {
       const res = await stripeInstance.post('/orders', { products })
       window.location.href = res.data.stripeSession.url

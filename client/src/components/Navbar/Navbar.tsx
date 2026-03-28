@@ -8,7 +8,7 @@ import SunnyIcon from '@mui/icons-material/Sunny'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState, useContext, useEffect } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
 import Cart from '../Cart/Cart'
@@ -49,6 +49,24 @@ function NavBar() {
     setMenuOpen(false)
   }
 
+  const user = useAppSelector((state) => state.auth.user)
+  const navigate = useNavigate()
+
+  const handleProfileClick = () => {
+    if (user) {
+      navigate('/profile')
+    } else {
+      navigate('/login')
+    }
+  }
+
+  const handleWishlistClick = () => {
+    if (user) {
+      navigate('/wishlist')
+    } else {
+      navigate('/login')
+    }
+  }
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -94,7 +112,7 @@ function NavBar() {
 
         <div className="right">
           <li>
-            <Link to="">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="./about">About</Link>
@@ -103,12 +121,12 @@ function NavBar() {
             <Link to="./contact">Contact</Link>
           </li>
           <li>
-            <Link to="./">Stores</Link>
+            <Link to="./store">Stores</Link>
           </li>
           <div className="icons">
             <SearchIcon fontSize="large" />
-            <PersonIcon fontSize="large" />
-            <FavoriteBorderIcon fontSize="large" />
+            <PersonIcon fontSize="large" onClick={handleProfileClick} />
+            <FavoriteBorderIcon fontSize="large" onClick={handleWishlistClick} />
             <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon fontSize="large" />
               <span>{products.length}</span>
@@ -136,7 +154,7 @@ function NavBar() {
             <Link to="./contact" onClick={menuClose}>
               Contact
             </Link>
-            <Link to="./" onClick={menuClose}>
+            <Link to="./store" onClick={menuClose}>
               Stores
             </Link>
           </div>
@@ -155,11 +173,11 @@ function NavBar() {
               <span>Search</span>
             </div>
             <div className="mobile-icon-item">
-              <PersonIcon fontSize="large" />
+              <PersonIcon fontSize="large" onClick={handleProfileClick} />
               <span>Account</span>
             </div>
             <div className="mobile-icon-item">
-              <FavoriteBorderIcon fontSize="large" />
+              <FavoriteBorderIcon fontSize="large" onClick={handleWishlistClick} />
               <span>Wishlist</span>
             </div>
           </div>

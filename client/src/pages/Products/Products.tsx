@@ -1,12 +1,11 @@
 import './Products.scss'
+import { SkeletonCard, List } from '../../components'
 import { useParams, useLocation } from 'react-router-dom'
-import List from '../../components/List/List'
 import { useEffect, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
 import TuneIcon from '@mui/icons-material/Tune'
 import CloseIcon from '@mui/icons-material/Close'
 
-// ✅ SubCategory type
 interface SubCategory {
   id: number
   title: string
@@ -31,7 +30,16 @@ function Products() {
 
   const { data, loading, error } = useFetch<SubCategory[]>(`/sub-categories?populate=categories`)
 
-  if (loading) return <div>Loading...</div>
+  if (loading)
+    return (
+      <div className="products">
+        <div className="left">
+          {[1, 2, 3].map((i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      </div>
+    )
   if (error) return <div>Error loading product</div>
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -142,11 +150,11 @@ function Products() {
       </div>
 
       <div className="right">
-        <img className="catImg" src="/images/category.jpeg" alt="category-img" />
+        <img className="catImg" src="/images/category.webp" alt="category-img" />
         <List
           catId={catId}
           maxPrice={maxPrice}
-          sort={sort}
+          sort={sort ?? ''}
           subCat={selectedSubCats}
           gender={genderFilter}
         />

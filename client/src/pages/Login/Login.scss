@@ -1,0 +1,54 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .login-card {
+    width: 100%;
+    max-width: 42rem;
+    background: var(--bg);
+    border: 1px solid var(--neutral);
+    border-radius: 2rem;
+    padding: 3rem;
+
+    .login-header {
+      margin-bottom: 2rem;
+
+      .login-title {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .login-sub {
+        color: var(--textLite);
+        font-size: 1.6rem;
+      }
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      color: var(--muted);
+
+      .signup-link {
+        color: var(--purple);
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -79,13 +79,6 @@
       display: flex;
       align-items: center;
       font-size: 3rem;
-
-      // @include tablet2 {
-      //   position: absolute;
-      //   left: 50%;
-      //   transform: translateX(-50%);
-      // }
-
       @include mobile {
         font-size: 1.5rem;
       }
@@ -118,7 +111,7 @@
           bottom: 0;
           height: 2px;
           width: 0;
-          background-color: red;
+          background-color: var(--danger);
           transition: all 0.3s ease-in;
         }
         &:hover::after {
@@ -138,7 +131,7 @@
         span {
           font-size: 1rem;
           border-radius: 50%;
-          background-color: red;
+          background-color: var(--danger);
           height: 1.7rem;
           width: 1.7rem;
           position: absolute;
@@ -164,7 +157,7 @@
       span {
         font-size: 1rem;
         border-radius: 50%;
-        background-color: red;
+        background-color: var(--danger);
         height: 1.7rem;
         width: 1.7rem;
         position: absolute;
@@ -183,7 +176,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.785);
+    background-color: var(--overlay);
     z-index: 995;
     animation: fadeIn 0.3s ease-in-out;
   }
@@ -208,7 +201,7 @@
     z-index: 1000;
     transition: left 0.3s ease-in-out;
     overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 10px var(--mb-box-shadow);
 
     @include mobile {
       width: 85%;
@@ -250,7 +243,7 @@
         border-bottom: 1px solid var(--textLite);
 
         h3 {
-          color: #ff4400d6;
+          color: var(--warning);
           letter-spacing: 1px;
         }
 

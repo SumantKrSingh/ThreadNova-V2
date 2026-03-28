@@ -24,7 +24,7 @@
     }
     p {
       flex: 3;
-      color: grey;
+      color: var(--muted);
       @include tablet2 {
         flex: 2;
         font-size: 1.5rem;

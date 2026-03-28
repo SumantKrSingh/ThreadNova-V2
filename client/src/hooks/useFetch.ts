@@ -7,14 +7,19 @@ function useFetch<T>(url: string) {
   const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
-    const fetchData = async (): Promise<void> => {
+    const fetchData = async (retries = 3): Promise<void> => {
       try {
         setLoading(true)
+        setError(false)
         const res = await axiosInstance.get<{ data: T }>(url)
         setData(res.data.data)
       } catch (err) {
-        setError(true)
-        console.error('Fetch error:', err)
+        if (retries > 0) {
+          setTimeout(() => fetchData(retries - 1), 2000)
+        } else {
+          setError(true)
+          console.error('Fetch error:', err)
+        }
       } finally {
         setLoading(false)
       }

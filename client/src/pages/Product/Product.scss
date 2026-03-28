@@ -75,8 +75,8 @@
     .add {
       width: 25rem;
       padding: 1rem;
-      background-color: #1b58db;
-      color: white;
+      background-color: var(--primary);
+      color: var(--text);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -93,30 +93,30 @@
         display: flex;
         gap: 1rem;
         align-items: center;
-        color: #1b58db;
+        color: var(--primary);
         font-size: 1.4rem;
         cursor: pointer;
         transition: all 0.5s ease-in;
 
         &:hover {
           transition: all 0.5s ease-out;
-          color: red;
+          color: var(--danger);
         }
       }
     }
     hr {
-      border: 1px solid rgb(223, 217, 217);
+      border: 1px solid var(--muted);
     }
     .info {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      color: grey;
+      color: var(--muted);
       margin-top: 3rem;
 
       hr {
         width: 20rem;
-        border: 1px solid rgb(223, 217, 217);
+        border: 1px solid var(--glass);
       }
     }
   }

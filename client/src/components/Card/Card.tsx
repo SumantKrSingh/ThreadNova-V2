@@ -1,24 +1,20 @@
 import './Card.scss'
 import { Link } from 'react-router-dom'
 import { getImageUrl } from '../../utils/getImage'
-
-// ✅ Define the shape of a single image object
 interface ImageObject {
   url: string
 }
 
-// ✅ Define the shape of the item prop
 interface CardItem {
   id: number | string
   title: string
   price: number
-  oldPrice?: number // optional — might not exist
-  isNew?: boolean // optional — might not exist
-  img?: ImageObject // optional — might not exist
-  img2?: ImageObject // optional — might not exist
+  oldPrice?: number
+  isNew?: boolean
+  img?: ImageObject
+  img2?: ImageObject
 }
 
-// ✅ Define the component's props
 interface CardProps {
   item: CardItem
 }

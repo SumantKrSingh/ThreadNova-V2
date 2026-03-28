@@ -1,7 +1,7 @@
 @use '../../styles/mixin.scss' as *;
 .contact {
-  background-color: rgb(13, 80, 169);
-  color: white;
+  background-color: var(--secondary);
+  color: var(--surface);
   padding: 1.5rem;
   display: flex;
   justify-content: center;
@@ -30,8 +30,8 @@
       padding: 1rem;
       border: none;
       border-radius: 0px 1rem 1rem 0px;
-      background-color: black;
-      color: white;
+      background-color: var(--base);
+      color: var(--surface);
     }
 
     .icons {

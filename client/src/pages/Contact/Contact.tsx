@@ -50,7 +50,7 @@ const textFieldSx = {
   textarea: { color: 'var(--text)' },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: 'var(--grey)',
+      borderColor: 'var(--neutral)',
     },
     '&:hover fieldset': {
       borderColor: 'var(--purple)',
@@ -60,7 +60,7 @@ const textFieldSx = {
     },
   },
   '& .MuiInputLabel-root': {
-    color: 'var(--grey)',
+    color: 'var(--textLite)',
   },
   '& .MuiInputLabel-root.Mui-focused': {
     color: 'var(--purple)',
@@ -100,8 +100,8 @@ const Contact = () => {
                 variant={selectedCategory === cat ? 'filled' : 'outlined'}
                 sx={{
                   cursor: 'pointer',
-                  borderColor: `var(--grey)`,
-                  color: selectedCategory === cat ? `var(--text)` : `var(--grey)`,
+                  borderColor: `var(--muted)`,
+                  color: selectedCategory === cat ? `var(--text)` : `var(--muted)`,
                   backgroundColor: selectedCategory === cat ? `var(--purple)` : `transparent`,
                   padding: `1, 2`,
                   fontSize: 12,

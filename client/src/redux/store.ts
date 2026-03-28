@@ -1,6 +1,7 @@
-import { cartSlice } from './cart/cartSlice'
+import authReducer from './auth/authSlice'
 import { configureStore } from '@reduxjs/toolkit'
 import cartReducer from './cart/cartSlice'
+import wishlistReducer from './wishlist/wishlistSlice'
 import {
   persistStore,
   persistReducer,
@@ -18,20 +19,27 @@ const storage = {
   removeItem: (key: string) => Promise.resolve(localStorage.removeItem(key)),
 }
 
-const persistConfig = {
-  key: 'root',
+const cartPersistConfig = {
+  key: 'cart',
   version: 1,
   storage,
 }
 
-const persistedReducer = persistReducer(
-  persistConfig,
-  cartReducer
-) as unknown as typeof cartSlice.reducer
+const wishlistPersistConfig = {
+  key: 'wishlist',
+  version: 1,
+  storage,
+}
+
+const persistedReducer = persistReducer(cartPersistConfig, cartReducer)
+
+const persistedWishlistReducer = persistReducer(wishlistPersistConfig, wishlistReducer)
 
 export const store = configureStore({
   reducer: {
     cart: persistedReducer,
+    auth: authReducer,
+    wishlist: persistedWishlistReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

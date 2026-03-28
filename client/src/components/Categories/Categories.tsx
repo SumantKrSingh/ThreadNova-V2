@@ -6,7 +6,14 @@ function Categories() {
     <div className="categories">
       <div className="cols">
         <div className="row">
-          <img src="/images/categ1.webp" alt="categ1" loading="lazy" decoding="async" />
+          <img
+            src="/images/categ1.webp"
+            alt="categ1"
+            loading="lazy"
+            decoding="async"
+            width={450}
+            height={300}
+          />
           <button>
             <Link to="./products/1" className="Sale">
               Sale
@@ -14,7 +21,14 @@ function Categories() {
           </button>
         </div>
         <div className="row">
-          <img src="/images/categ2.webp" alt="categ2" loading="lazy" decoding="async" />
+          <img
+            src="/images/categ2.webp"
+            alt="categ2"
+            loading="lazy"
+            decoding="async"
+            width={450}
+            height={300}
+          />
           <button>
             <Link to="./products/1" className="sale">
               Sale
@@ -24,7 +38,14 @@ function Categories() {
       </div>
       <div className="cols">
         <div className="row">
-          <img src="/images/categ3.webp" alt="categ3" loading="lazy" decoding="async" />
+          <img
+            src="/images/categ3.webp"
+            alt="categ3"
+            loading="lazy"
+            decoding="async"
+            width={450}
+            height={300}
+          />
           <button>
             <Link to="./products/1" className="sale">
               Sale
@@ -36,7 +57,14 @@ function Categories() {
         <div className="row">
           <div className="cols">
             <div className="row">
-              <img src="/images/categ4.webp" alt="categ4" loading="lazy" decoding="async" />
+              <img
+                src="/images/categ4.webp"
+                alt="categ4"
+                loading="lazy"
+                decoding="async"
+                width={450}
+                height={300}
+              />
               <button>
                 <Link to="./products/1" className="sale">
                   Sale
@@ -46,7 +74,14 @@ function Categories() {
           </div>
           <div className="cols">
             <div className="row">
-              <img src="/images/categ5.webp" alt="categ5" loading="lazy" decoding="async" />
+              <img
+                src="/images/categ5.webp"
+                alt="categ5"
+                loading="lazy"
+                decoding="async"
+                width={450}
+                height={300}
+              />
               <button>
                 <Link to="./products/1" className="sale">
                   Sale
@@ -56,7 +91,14 @@ function Categories() {
           </div>
         </div>
         <div className="row">
-          <img src="/images/categ6.webp" alt="categ6" loading="lazy" decoding="async" />
+          <img
+            src="/images/categ6.webp"
+            alt="categ6"
+            loading="lazy"
+            decoding="async"
+            width={450}
+            height={300}
+          />
           <button>
             <Link to="./products/1" className="sale">
               Sale
