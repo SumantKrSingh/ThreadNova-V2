@@ -1,15 +1,17 @@
 import Card from '../Card/Card'
 import useFetch from '../../hooks/useFetch'
 import './FeatureProducts.scss'
+import { type CardItem } from '../../types/product.types'
 import SkeletonCard from '../SkeletonLoaders/SkeletonCard'
 
-// ✅ Props type
 interface FeatureProductProps {
   type: string
 }
 
 function FeatureProduct({ type }: FeatureProductProps) {
-  const { data, loading, error } = useFetch(`products?populate=*&[filters][type][$eq]=${type}`)
+  const { data, loading, error } = useFetch<CardItem[]>(
+    `products?populate=*&[filters][type][$eq]=${type}`
+  )
 
   return (
     <div className="featureProducts">

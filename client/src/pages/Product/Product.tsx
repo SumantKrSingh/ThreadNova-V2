@@ -36,6 +36,8 @@ function Product() {
       navigate('/login')
       return
     }
+    if (!product) return
+
     if (isWishlisted) {
       dispatch(removeFromWishlist(product.id as number))
     } else {
