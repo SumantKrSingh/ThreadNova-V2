@@ -45,11 +45,11 @@ const Profile = () => {
           <span className="stat-num">{wishlistCount}</span>
           <span className="stat-label">Wishlist</span>
         </Link>
-        <Link to="/cart" className="stat-card">
+        <div className="stat-card">
           <ShoppingCartOutlinedIcon style={{ fontSize: '2.4rem', color: '#9b8cff' }} />
           <span className="stat-num">{cartCount}</span>
           <span className="stat-label">In cart</span>
-        </Link>
+        </div>
       </div>
 
       <div className="profile-details">

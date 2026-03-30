@@ -58,6 +58,8 @@ function NavBar() {
     } else {
       navigate('/login')
     }
+
+    menuClose()
   }
 
   const handleWishlistClick = () => {
@@ -66,6 +68,7 @@ function NavBar() {
     } else {
       navigate('/login')
     }
+    menuClose()
   }
   return (
     <div className="navbar">
@@ -174,11 +177,11 @@ function NavBar() {
             </div>
             <div className="mobile-icon-item">
               <PersonIcon fontSize="large" onClick={handleProfileClick} />
-              <span>Account</span>
+              <span onClick={handleProfileClick}>Account</span>
             </div>
             <div className="mobile-icon-item">
               <FavoriteBorderIcon fontSize="large" onClick={handleWishlistClick} />
-              <span>Wishlist</span>
+              <span onClick={handleWishlistClick}>Wishlist</span>
             </div>
           </div>
           <div className="mobile-settings">
