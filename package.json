@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "cd client && npm run dev",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }

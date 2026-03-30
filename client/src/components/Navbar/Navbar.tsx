@@ -48,9 +48,6 @@ function NavBar() {
   function menuClose(): void {
     setMenuOpen(false)
   }
-
-  let husky = 'test husky and eslint'
-
   const user = useAppSelector((state) => state.auth.user)
   const navigate = useNavigate()
 
