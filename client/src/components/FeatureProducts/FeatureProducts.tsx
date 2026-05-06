@@ -1,7 +1,7 @@
 import Card from '../Card/Card'
 import useFetch from '../../hooks/useFetch'
 import './FeatureProducts.scss'
-import { type CardItem } from '../../types/product.types'
+import type { CardItem } from '../../types/product.types'
 import SkeletonCard from '../SkeletonLoaders/SkeletonCard'
 
 interface FeatureProductProps {

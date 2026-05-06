@@ -1,8 +1,8 @@
 import axios from 'axios'
-
+import { API_TOKEN, API_URL } from '../utils/constants'
 export const stripeInstance = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL,
+  baseURL: API_URL,
   headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_APP_API_TOKEN}`,
+    Authorization: `Bearer ${API_TOKEN}`,
   },
 })

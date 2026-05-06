@@ -5,7 +5,6 @@ import type { CardItem } from '../../types/product.types'
 import SkeletonCard from '../SkeletonLoaders/SkeletonCard'
 
 interface ListProps {
-  catId: number
   subCat: string[]
   maxPrice: number
   sort: string

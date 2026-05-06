@@ -86,11 +86,11 @@ function NavBar() {
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
-            <Link to="/products/1?gender=Women Category">Women</Link>
+            <Link to="/products?gender=Women Category">Women</Link>
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
-            <Link to="/products/2?gender=Men Category">Men</Link>
+            <Link to="/products?gender=Men Category">Men</Link>
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
@@ -162,10 +162,10 @@ function NavBar() {
           </div>
           <div className="mobile-categories">
             <h3>Categories</h3>
-            <Link to="/products/1?gender=Women Category" onClick={menuClose}>
+            <Link to="/products?gender=Women Category" onClick={menuClose}>
               Women
             </Link>
-            <Link to="/products/2?gender=Men Category" onClick={menuClose}>
+            <Link to="/products?gender=Men Category" onClick={menuClose}>
               Men
             </Link>
           </div>

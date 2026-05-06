@@ -13,15 +13,15 @@ function useFetch<T>(url: string) {
         setError(false)
         const res = await axiosInstance.get<{ data: T }>(url)
         setData(res.data.data)
+        setLoading(false)
       } catch (err) {
         if (retries > 0) {
           setTimeout(() => fetchData(retries - 1), 2000)
         } else {
           setError(true)
+          setLoading(false)
           console.error('Fetch error:', err)
         }
-      } finally {
-        setLoading(false)
       }
     }
 

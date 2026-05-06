@@ -1,6 +1,6 @@
 import './Products.scss'
 import { SkeletonCard, List } from '../../components'
-import { useParams, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
 import TuneIcon from '@mui/icons-material/Tune'
@@ -12,8 +12,6 @@ interface SubCategory {
 }
 
 function Products() {
-  const { id } = useParams<{ id: string }>()
-  const catId = parseInt(id ?? '0')
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const genderFromURL = queryParams.get('gender') ?? 'all'
@@ -152,7 +150,6 @@ function Products() {
       <div className="right">
         <img className="catImg" src="/images/category.webp" alt="category-img" />
         <List
-          catId={catId}
           maxPrice={maxPrice}
           sort={sort ?? ''}
           subCat={selectedSubCats}

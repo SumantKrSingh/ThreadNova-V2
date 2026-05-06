@@ -24,36 +24,34 @@ const router = createBrowserRouter([
     ),
     children: [
       { path: '/', element: <Home /> },
-      { path: '/products/:id', element: <Products /> },
+      { path: '/products', element: <Products /> },
       { path: '/product/:id', element: <Product /> },
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
       { path: '/login', element: <Login /> },
       { path: '/signup', element: <Signup /> },
-      { path: '/profile', element: <Profile /> },
-      { path: '/wishlist', element: <Wishlist /> },
       { path: '/store', element: <Store /> },
+      {
+        path: '/profile',
+        element: (
+          <PrivateRoute>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Profile />
+            </Suspense>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/wishlist',
+        element: (
+          <PrivateRoute>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Wishlist />
+            </Suspense>
+          </PrivateRoute>
+        ),
+      },
     ],
-  },
-  {
-    path: '/profile',
-    element: (
-      <PrivateRoute>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Profile />
-        </Suspense>
-      </PrivateRoute>
-    ),
-  },
-  {
-    path: '/wishlist',
-    element: (
-      <PrivateRoute>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Wishlist />
-        </Suspense>
-      </PrivateRoute>
-    ),
   },
 ])
 

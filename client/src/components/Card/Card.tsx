@@ -1,25 +1,9 @@
 import './Card.scss'
 import { Link } from 'react-router-dom'
 import { getImageUrl } from '../../utils/getImage'
-interface ImageObject {
-  url: string
-}
+import type { CardItem } from '../../types/product.types'
 
-interface CardItem {
-  id: number | string
-  title: string
-  price: number
-  oldPrice?: number
-  isNew?: boolean
-  img?: ImageObject
-  img2?: ImageObject
-}
-
-interface CardProps {
-  item: CardItem
-}
-
-function Card({ item }: CardProps) {
+function Card({ item }: { item: CardItem }) {
   return (
     <>
       <Link to={`/product/${item.id}`}>
@@ -32,8 +16,8 @@ function Card({ item }: CardProps) {
           <h2>{item?.title}</h2>
         </div>
         <div className="prices">
-          <h3>₹{item.oldPrice || item?.price + 150}</h3>
-          <h3>₹{item?.price}</h3>
+          <h3>₹{item?.oldPrice || item?.price + 150}</h3>
+          <h3>₹{item.price}</h3>
         </div>
       </Link>
     </>
